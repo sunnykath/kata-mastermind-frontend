@@ -1,0 +1,43 @@
+# Deployment - a declaration of pods
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "suyash-mastermind-frontend-deployment"
+  labels:
+    app: "suyash-mastermind-frontend"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "suyash-mastermind-frontend"
+  template:
+    metadata:
+      labels:
+        app: "suyash-mastermind-frontend"
+        repo: "suyash-mastermind-frontend"
+    spec:
+      containers:
+        - image: "docker.myob.com/future-makers-academy/suyash-mastermind-frontend"
+          name: suyash-mastermind-frontend
+          ports:
+            - containerPort: 80
+
+# Service - a logical grouping of pods
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "suyash-mastermind-frontend-service"
+  labels:
+    app: "suyash-mastermind-frontend"
+    repo: "suyash-mastermind-frontend"
+  annotations:
+    prometheus.io/scrape: "true"
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: "suyash-mastermind-frontend"
+
