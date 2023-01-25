@@ -1,3 +1,3 @@
-[![API - Build status](https://badge.buildkite.com/a8980ed6b9c1559c9d3e0283a602209405fc61d580247d4b4f.svg)](https://buildkite.com/myob/suyash-mastermind)
+[![Build status](https://badge.buildkite.com/84b05a202d0fcbf03c74fba5c8f715aa4048eee6dfcc876ac3.svg)](https://buildkite.com/myob/suyash-mastermind-frontend)
 # Mastermind Kata
 A kata for the colour version of wordle.
