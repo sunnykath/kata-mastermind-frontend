@@ -1,0 +1,24 @@
+:root {
+  --regal: #6100a5;
+  --dusk: #8241aa;
+  --rogue: #b93499;
+  --candy: #ec0677;
+
+  --zest:#00bc6f;
+
+  --heading-font: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  --text-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle, var(--regal), var(--dusk));
+  margin: 0;
+  font-family: var(--text-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
