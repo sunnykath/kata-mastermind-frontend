@@ -1,6 +1,9 @@
 ---
 steps:
-  - label: 'do not panic :cherry_blossom::whale:'
-    command: 'echo hello, engineer'
+
+  - block
+
+  - label: ':cloudsmith: Build image and push to Cloudsmith'
+    command: './scripts/build-and-publish-to-cloudsmith.sh'
     agents:
       queue: fma-dev
