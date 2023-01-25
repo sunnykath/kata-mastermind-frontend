@@ -1,0 +1,14 @@
+button {
+    margin: 40px;
+    font-size: x-large;
+    width: 150px;
+    height: 50px;
+    border: .1em solid var(green);
+    background: var(--zest);
+    justify-self: flex-end;
+}
+
+button:hover {
+    color: whitesmoke;
+    cursor: pointer;
+}

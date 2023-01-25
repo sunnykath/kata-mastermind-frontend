@@ -1,0 +1,37 @@
+.accordion {
+    width: clamp(300px, 40vw , 600px);
+}
+
+.title {
+    margin: 10px 0 0 0;
+    background-color: var(--rogue);
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: var(--heading-font);
+    font-size: calc(5px + 2vmin);
+}
+
+.active, .title:hover {
+    background-color: var(--candy);
+    cursor:pointer;
+}
+
+.content {
+    padding: 0 18px;
+    background-color: var(--dusk);
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    color: white;
+}
+
+.open {
+    max-height: 100vh;
+}
+
+.closed {
+    max-height: 0;
+}
