@@ -1,6 +1,6 @@
 FROM node:18.7.0 as base
 WORKDIR /app
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci
 COPY . .
 
