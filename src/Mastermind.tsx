@@ -1,43 +1,30 @@
-import Accordion from './Components/Accordion/Accordion';
-import StartButton from './Components/StartButton/StartButton';
+import { useState } from 'react'
 import './Mastermind.css'
+import Main from './Pages/Main/Main';
+import Game from './Pages/Game/Game';
 
 export default function Mastermind() {
+  const [game, setGame] = useState(null);
 
-  const rules = (
-  <ol>
-    <li>The Mastermind (computer) will select 4 colours.</li>
-    <li>The colours are randomly selected from [Red, Blue, Orange, Purple, Yellow]</li>
-    <li>Colours can be duplicated but there will always be exactly 4.</li>
-    <li>You take turns to guess what the 4 colours are.</li>
-    <li>The Mastermind will return an array back to you with clues.</li>
-    <li>For every correctly positioned colour in the array an element of “Black” is returned.</li>
-    <li>For every correct colour but in the wrong position an element of “White” will be returned.</li>
-    <li>However, the return array will be shuffled!</li>
-  </ol>);
+  const URL: string = (process.env.REACT_APP_API_URL as string);
 
-  const win_conditions = (
-    <ul>
-      <li>Passing the correct array will win you the game!</li>
-      <li>Guessing more than 60 times will result in a loss.</li>
-    </ul>
-  );
+  const handleNewGame = async () => {
+    const rawResponse = await fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    });
+    const content = await rawResponse.json();
+    setGame(content);
+    console.log(content);
+  }
 
   return (
-    <div className="Mastermind">
-      <header className="Mastermind-header">
-        <h1>Mastermind</h1>
-      </header>
-      <div className="Mastermind-description">
-        Mastermind or Master Mind is a code-breaking game for two players. The modern game with pegs was invented in 
-        by Mordecai Meirowitz, an Israeli postmaster and telecommunications expert. It resembles an earlier 
-        pencil and paper game called Bulls and Cows that may date back a century or more. (Source Wikipedia)
-      </div>
-      <Accordion title={'Rules'} content={rules} />
-      <Accordion title={'How to win'} content={win_conditions}/>
-
-      <StartButton/>
-
-    </div>
+    // game ?
+    <Game gameId={game} />
+    // :
+    // <Main onStartGame={handleNewGame} />
   );
 }
