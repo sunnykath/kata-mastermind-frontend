@@ -1,0 +1,32 @@
+.cell {
+    width: 2rem;
+    height: 2rem;
+    margin: .5rem;
+    background-color: aliceblue;
+    
+    border: 2px solid black;
+}
+
+.cell.red {
+    background-color: red;
+}
+
+.cell.blue {
+    background-color: blue;
+}
+
+.cell.green {
+    background-color: green;
+}
+
+.cell.orange {
+    background-color: orange;
+}
+
+.cell.purple {
+    background-color: purple;
+}
+
+.cell.yellow {
+    background-color: yellow;
+}
