@@ -1,9 +1,11 @@
 import './StartButton.css'
 
-export default function StartButton() {
+export default function StartButton(props: any) {
 
-    return(
-        <button>Start</button>
+    const { onClick } = props;
+
+    return (
+        <button onClick={onClick}>Start</button>
     );
 
 }
